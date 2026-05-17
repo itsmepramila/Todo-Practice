@@ -1,17 +1,20 @@
 <h1>My Daily Todo</h1>
 <p>
-    <a href="">
+    <a href="/todo-create/">
         <button>Add Todo</button>
     </a>
 </p>
 
 {% for todo in todos %}
 
-<p>{{ todo.title }}</p> <a href="">
-    <button>Edit</button>
-</a>
-<a href="">
+<p>{{ todo.title }}
+
+    <a href="/todo-update/{{ todo.pk }}">
+            <button>Edit</button>
+    </a>
+<a href="/todo-delete/{{ todo.pk }}">
     <button>Delete</button>
 </a>
+</p> 
 
 {% endfor %}
