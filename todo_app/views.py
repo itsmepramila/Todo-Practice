@@ -27,7 +27,7 @@ def todo_delete(request, pk):
 def todo_update(request, pk):
     if request.method == "GET":
         todo = Todo.objects.get(pk=pk)
-        return render(request, "todo_update.html", {'todo': todo})
+        return render(request, "bootstrap/todo_update.html", {'todo': todo})
     else:  # POST
         todo = Todo.objects.get(pk=pk)
         todo.title = request.POST.get("title")  # Corrected accessing POST data
